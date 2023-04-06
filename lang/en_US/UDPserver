@@ -4,7 +4,7 @@ a2='EXCLUDED PORTS'
 a3='UNINSTALL UDPserver'
 a4='START/STOP UDPserver'
 a5='REMOVE SCRIPT'
-a6='CREATE CUSTOMER'
+a6='CREATE USER'
 a7='REMOVE CLIENT'
 a8='RENEW CLIENT'
 a9='LOCK/UNLOCK CLIENT'
@@ -135,7 +135,7 @@ a93='SECONDS'
 a94='this script is not compatible with your operating system'
 a95='Use Ubuntu 20 or higher'
 a102='INSTALLATION COMPLETE'
-a103='use the command\nudp\nto run the menu'
+a103='use the command\nmenu\nto run the menu'
 
 
 

@@ -5,9 +5,9 @@ lang_dir="$udp_file/lang"
 lang="$lang_dir/lang"
 
 idioam_lang(){
-  source <(curl -sSl 'https://raw.githubusercontent.com/rudi9999/SocksIP-udpServer/main/lang/lang')
+  source <(curl -sSl 'https://raw.githubusercontent.com/nhuxdevz/nhuxudp/master/lang/lang')
   title -ama 'IDIOMA/LANGUAGE'
-  echo " $(msg -verd "[0]") $(msg -verm2 '>') $(msg -azu "Español Default")"
+  echo " $(msg -verd "[0]") $(msg -verm2 '>') $(msg -azu "Español")"
   n=0
   for (( i = 0; i < ${#list_lang[@]}; i++ )); do
     let n++
@@ -22,7 +22,7 @@ idioam_lang(){
   let lg-- 
   [[ ! -d $lang_dir/${list_lang[$lg]} ]] && mkdir -p $lang_dir/${list_lang[$lg]} || rm -rf $lang_dir/${list_lang[$lg]}/*
   for arch in $listarq; do
-    if ! wget -O $lang_dir/${list_lang[$lg]}/$arch "https://raw.githubusercontent.com/rudi9999/SocksIP-udpServer/main/lang/${list_lang[$lg]}/$arch" &>/dev/null ;then
+    if ! wget -O $lang_dir/${list_lang[$lg]}/$arch "https://raw.githubusercontent.com/nhuxdevz/nhuxudp/master/lang/${list_lang[$lg]}/$arch" &>/dev/null ;then
       rm -rf $lang_dir/${list_lang[$lg]}
       echo '' > $lang ; exit
     fi
@@ -71,18 +71,18 @@ check_sistem(){
 if [[ ! -e $udp_file/UDPserver.sh ]]; then
   mkdir $udp_file
   chmod -R +x $udp_file
-  source <(curl -sSL 'https://raw.githubusercontent.com/rudi9999/Herramientas/main/module/module')
+  source <(curl -sSL 'https://raw.githubusercontent.com/nhuxdevz/tools/main/module/module')
   idioam_lang
   [[ -e $lang ]] && newlang=$(cat $lang) && [[ ! $newlang = '' ]] && source $udp_file/lang/$newlang/UDPserver
   source /etc/os-release
   check_sistem
-	wget -O $udp_file/module 'https://raw.githubusercontent.com/rudi9999/Herramientas/main/module/module' &>/dev/null
+	wget -O $udp_file/module 'https://raw.githubusercontent.com/nhuxdevz/tools/main/module/module' &>/dev/null
 	chmod +x $udp_file/module
 	#source $udp_file/module
-	wget -O $udp_file/limitador.sh "https://raw.githubusercontent.com/rudi9999/SocksIP-udpServer/main/limitador.sh" &>/dev/null
+	wget -O $udp_file/limitador.sh "https://raw.githubusercontent.com/nhuxdevz/nhuxudp/master/limitador.sh" &>/dev/null
 	chmod +x $udp_file/limitador.sh
-	echo '/etc/UDPserver/UDPserver.sh' > /usr/bin/udp
-	chmod +x /usr/bin/udp
+	echo '/etc/UDPserver/UDPserver.sh' > /usr/bin/menu
+	chmod +x /usr/bin/menu
 	repo_install
 	apt update -y && apt upgrade -y
 	ufw disable
@@ -91,7 +91,7 @@ if [[ ! -e $udp_file/UDPserver.sh ]]; then
 	chmod +x $udp_file/UDPserver.sh
 	rm $(pwd)/$0 &> /dev/null
 	title "${a102:-INSTALACION COMPLETA}"
-	print_center -ama "${a103:-Use el comando\nudp\npara ejecutar el menu}"
+	print_center -ama "${a103:-Use el comando\nmenu\npara ejecutar el menu}"
 	msg -bar
 	time_reboot 10
 fi
@@ -722,7 +722,7 @@ QUIC_SCRIPT(){
 	systemctl stop UDPserver &>/dev/null
 	rm /etc/systemd/system/UDPserver.service
 	rm /usr/bin/udpServer
-	rm /usr/bin/udp
+	rm /usr/bin/menu
 	rm -rf $udp_file
 	title "${a40:-DESINSTALACION COMPLETA}"
 	time_reboot 10

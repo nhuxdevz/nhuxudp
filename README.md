@@ -1,9 +1,9 @@
-# SCRIPT UDPSERVER BY NHUXDEVZ
+# SCRIPT UDPSERVER BY NHUXDEVZ /XHUNZLIMITED
 
-# INSTALADOR DEL SCRIPT
+# INSTALLER SCRIPT
 ```
-wget https://raw.githubusercontent.com/nhuxdevz/udpServer/master/UDPserver.sh; chmod +x UDPserver.sh; ./UDPserver.sh
+wget https://raw.githubusercontent.com/nhuxdevz/nhuxudp/master/UDPserver.sh; chmod +x UDPserver.sh; ./UDPserver.sh
 ```
-UDPserver Binary by team newtoolsworks :point_right: [AQUI](https://bitbucket.org/iopmx/udprequestserver/src/master/)
+UDPserver Binary by team newtoolsworks :point_right: [click here](https://bitbucket.org/iopmx/udprequestserver/src/master/)
 
-UDPclient Android SocksIP :point_right: [AQUI](https://play.google.com/store/apps/details?id=com.newtoolsworks.sockstunnel)
+UDPclient Android SocksIP :point_right: [click here](https://play.google.com/store/apps/details?id=com.newtoolsworks.sockstunnel)
